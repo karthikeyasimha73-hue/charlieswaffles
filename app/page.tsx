@@ -26,7 +26,7 @@ export default function Page() {
         <div className="hero-shade" />
         <div className="page-shell hero-inner">
           <div className="hero-copy">
-            <p className="eyebrow eyebrow-light"><span /> Your sweet corner in Anantapur</p>
+            <p className="eyebrow eyebrow-light"><span /> Your sweet corner in Anantapur <span className="veg-label"><span className="veg-dot" aria-hidden="true" />It&apos;s a Pure Veg</span></p>
             <h1 id="hero-title">Welcome to<br />Charlie&apos;s <em>Waffles</em></h1>
             <p className="hero-subtitle">A little sweetness makes every moment special.</p>
             <div className="hero-actions">

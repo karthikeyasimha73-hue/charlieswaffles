@@ -111,7 +111,9 @@ button { color: inherit; }
 .hero-copy { max-width: 650px; padding-block: 90px 104px; animation: rise-in .8s both; }
 .eyebrow { margin: 0 0 17px; color: #a96b3e; font-size: 10px; font-weight: 700; letter-spacing: .18em; line-height: 1.5; text-transform: uppercase; }
 .eyebrow-light { color: #eccb8b; }
-.eyebrow-light > span { display: inline-block; width: 24px; height: 1px; margin-right: 10px; vertical-align: middle; background: currentColor; }
+.eyebrow-light > span:first-child { display: inline-block; width: 24px; height: 1px; margin-right: 10px; vertical-align: middle; background: currentColor; }
+.veg-label { display: inline-flex; align-items: center; gap: 7px; margin-left: 14px; padding: 6px 10px; border: 1px solid rgba(185, 219, 177, .45); border-radius: 999px; color: #e3f2dc; background: rgba(46, 89, 46, .35); font-size: 9px; font-weight: 600; letter-spacing: .035em; line-height: 1; text-transform: none; vertical-align: middle; }
+.veg-dot { width: 7px; height: 7px; border-radius: 50%; background: #9bd48f; box-shadow: 0 0 0 2px rgba(155, 212, 143, .18); }
 .hero-copy h1, .section-heading h2, .welcome-copy h2, .visit-copy h2, .contact-intro h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(48px, 7vw, 84px); font-weight: 400; letter-spacing: -.055em; line-height: .99; }
 .hero-copy h1 em, .section-heading h2 em, .welcome-copy h2 em, .visit-copy h2 em, .contact-intro h2 em { color: var(--gold); font-weight: 400; }
 .hero-subtitle { margin: 22px 0 28px; color: #e6d7c8; font-family: Georgia, serif; font-size: 16px; }

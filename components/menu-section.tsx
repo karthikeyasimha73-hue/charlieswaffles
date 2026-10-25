@@ -33,7 +33,7 @@ export function MenuSection() {
               </button>
             ))}
           </div>
-          <span className="menu-note">Menu &amp; prices as provided</span>
+          <span className="menu-note">Menu &amp; prices may differ</span>
         </div>
         <div className="menu-groups" aria-live="polite">
           {visibleGroups.map((group) => (

@@ -59,7 +59,7 @@ export function MenuSection() {
             </section>
           ))}
         </div>
-        <p className="menu-disclaimer">The Dry Fruits Brownie Hamper is listed once under Hampers. Please contact the shop to confirm current availability and customization options.</p>
+        <p className="menu-disclaimer">Please contact the shop to confirm current availability and customization options.</p>
       </div>
     </section>
   )

@@ -5,7 +5,7 @@ export const business = {
     'Kalpataru Enclave, M.G. Colony, Revenue Colony, Ramachandra Nagar, Anantapur, Andhra Pradesh 515001, India',
   phone: '080748 71753',
   phoneLink: 'tel:+918074871753',
-  priceRange: 'Menu items ₹89–₹399',
+  priceRange: 'Menu items ₹89–₹419',
   openingHours: 'Every day · 5:00–10:15 PM',
   closingTime: null,
   directionsUrl:
@@ -139,7 +139,32 @@ export const menuGroups: MenuGroup[] = [
         name: 'Dry Fruits Brownie Hamper',
         price: 119,
         customizable: true,
-        description: 'Rich, fudgy brownies loaded with the delightful crunch of dry fruits.',
+        description: 'Rich, fudgy brownies loaded with the delightful crunch of dry fruits. A delicious combination of chocolatey goodness and nutty flavor in every bite.',
+      },
+      {
+        name: 'Dark Choco Brownie Cake Hamper',
+        price: 419,
+        description: 'Pre-order only; order at least 2 hours in advance. Eggless brownie topped with hot, melted dark chocolate.',
+      },
+      {
+        name: 'Oreo Kunafa Choco Fudge Hamper',
+        price: 167,
+        description: 'An indulgent chocolate fudge treat combining the creamy, chocolatey goodness of Oreo with crispy kunafa for an irresistible mix of rich flavors and crunchy textures.',
+      },
+      {
+        name: 'Dry Fruits Kunafa Choco Fudge Hamper',
+        price: 181,
+        description: 'Decadent chocolate fudge paired with crispy kunafa strands and crunchy dry fruits. A delicious blend of rich chocolate, nutty flavors, and satisfying crunch.',
+      },
+      {
+        name: 'Biscoff Waffle Sandwich Hamper',
+        price: 189,
+        description: 'A delicious waffle sandwich featuring the caramelized, spiced flavor of Biscoff, nestled between golden waffles for a crispy, sweet, and indulgent treat.',
+      },
+      {
+        name: 'Oreo Waffle Sandwich Hamper',
+        price: 179,
+        description: 'Golden, crispy waffles layered with the irresistible chocolatey crunch of Oreo and creamy sweetness. A delightful dessert sandwich perfect for satisfying your sweet cravings.',
       },
     ],
   },

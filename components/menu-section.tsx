@@ -50,8 +50,7 @@ export function MenuSection() {
                         <h4>{item.name}</h4>
                         <span className="menu-item-price">₹{item.price}</span>
                       </div>
-                      {item.description && <p className="menu-item-description">{item.description}</p>}
-                      {item.customizable && <span className="customizable-label">Customizable</span>}
+                      <p className="menu-item-description">{item.description}</p>
                     </div>
                   </li>
                 ))}
@@ -59,7 +58,7 @@ export function MenuSection() {
             </section>
           ))}
         </div>
-        <p className="menu-disclaimer">Please contact the shop to confirm current availability and customization options.</p>
+        <p className="menu-disclaimer">Please contact the shop to confirm current availability.</p>
       </div>
     </section>
   )

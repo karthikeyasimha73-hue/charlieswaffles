@@ -85,7 +85,7 @@ export default function Page() {
             </a>
             <div className="business-detail">
               <Clock3 size={18} aria-hidden="true" />
-              <div><span>Opening time</span><p>{business.openingTime}<small> · Closing time not provided</small></p></div>
+              <div><span>Opening hours</span><p>{business.openingHours}</p></div>
             </div>
             <div className="business-card-footer"><span>{business.category}</span><span>{business.priceRange}</span></div>
           </div>

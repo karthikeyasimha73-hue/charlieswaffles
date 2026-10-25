@@ -6,7 +6,7 @@ export const business = {
   phone: '080748 71753',
   phoneLink: 'tel:+918074871753',
   priceRange: 'Menu items ₹89–₹399',
-  openingTime: 'Opens at 5:00 PM',
+  openingHours: 'Every day · 5:00–10:15 PM',
   closingTime: null,
   directionsUrl:
     "https://www.google.com/maps/search/?api=1&query=Charlie's+Waffles+Anantapur+Andhra+Pradesh",

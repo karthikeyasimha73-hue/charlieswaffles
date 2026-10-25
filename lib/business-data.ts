@@ -5,61 +5,142 @@ export const business = {
     'Kalpataru Enclave, M.G. Colony, Revenue Colony, Ramachandra Nagar, Anantapur, Andhra Pradesh 515001, India',
   phone: '080748 71753',
   phoneLink: 'tel:+918074871753',
-  priceRange: '₹1–₹200 per person',
+  priceRange: 'Menu items ₹89–₹399',
   openingTime: 'Opens at 5:00 PM',
   closingTime: null,
   directionsUrl:
     "https://www.google.com/maps/search/?api=1&query=Charlie's+Waffles+Anantapur+Andhra+Pradesh",
   orderUrl:
-    'https://www.google.com/searchviewer/42?cvd=CLw_EicKJeICIjIgEhkiF9LX29IPEQoNL2cvMTF4dHpnbW1feBgBOgMI8A0%3D&hl=en-IN&gl=in&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=M7Tdaqi0CZuN4-EP19TNqAw&ei=M7Tdaqi0CZuN4-EP19TNqAw&fo_s=OA&opi=79508299&orderType=1&ebb=1&cs=0&foub=mcpp',
+    'https://www.google.com/searchviewer/42?cvd=CLw_EicKJeICIjIgEhkiF9LX29IPEQoNL2cvMTF4dHpnbW1feBgBOgMI8A0%3D&hl=en-IN&gl=in&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&gei=M7Tdaqi0CZuN4-EP19TNqAw&ei=M7Tdaqi0CZuN4-EP19TNqAw&fo_s=OA&opi=79508299&orderType=1&ebb=1&cs=0&foub=mcpp',
 }
 
-export const menuCategories = ['All', 'Waffles', 'Chocolate Desserts', 'Cakes', 'Beverages'] as const
+export const menuCategories = ['All', 'Waffles', 'Snacks', 'Desserts', 'Hampers'] as const
 
 export type MenuCategory = (typeof menuCategories)[number]
+export type MenuGroupCategory = Exclude<MenuCategory, 'All'>
 
 export type MenuItem = {
   name: string
-  category: Exclude<MenuCategory, 'All'>
-  description: string
-  image: string
-  imageAlt: string
-  label?: string
-  price?: string
+  price: number
+  customizable?: boolean
+  description?: string
 }
 
-// Replace these explicitly labeled samples with Charlie’s verified menu and prices.
-export const menuItems: MenuItem[] = [
+export type MenuGroup = {
+  title: string
+  category: MenuGroupCategory
+  items: MenuItem[]
+}
+
+export const menuGroups: MenuGroup[] = [
   {
-    name: 'Sample waffle',
+    title: 'Belgium Waffle Sandwiches',
     category: 'Waffles',
-    description: 'A placeholder for a signature waffle description.',
-    image: '/menu-waffle.png',
-    imageAlt: 'Golden waffle with strawberries and chocolate drizzle',
-    label: 'Sample item',
+    items: [
+      { name: 'Dark Delight Waffle Sandwich', price: 169, customizable: true },
+      { name: 'Chocolate Waffle Sandwich', price: 169, customizable: true },
+      { name: 'Milk Mist Waffle Sandwich', price: 169, customizable: true },
+      { name: 'Triple Chocolate Waffle Sandwich', price: 179, customizable: true },
+      { name: 'KitKat Waffle Sandwich', price: 179, customizable: true },
+      { name: 'Nutella Waffle Sandwich', price: 179, customizable: true },
+      { name: 'Dry Fruits Waffle Sandwich', price: 199, customizable: true },
+    ],
   },
   {
-    name: 'Sample chocolate dessert',
-    category: 'Chocolate Desserts',
-    description: 'A placeholder for a chocolate dessert description.',
-    image: '/menu-dessert.png',
-    imageAlt: 'Chocolate brownie served with vanilla ice cream',
-    label: 'Sample item',
+    title: 'Mini Popsicle Waffles',
+    category: 'Waffles',
+    items: [
+      { name: 'Dark Popsicle Waffle (Mini)', price: 89, customizable: true },
+      { name: 'Milk Popsicle Waffle (Mini)', price: 89, customizable: true },
+      { name: 'Triple Popsicle Waffle (Mini)', price: 89, customizable: true },
+      { name: 'Oreo Popsicle Waffle (Mini)', price: 89, customizable: true },
+      { name: 'KitKat Popsicle Waffle (Mini)', price: 89, customizable: true },
+      { name: 'Dry Fruits Popsicle Waffle (Mini)', price: 99, customizable: true },
+    ],
   },
   {
-    name: 'Sample cake slice',
-    category: 'Cakes',
-    description: 'A placeholder for a cake description.',
-    image: '/menu-cake.png',
-    imageAlt: 'Slice of chocolate layer cake with ganache',
-    label: 'Sample item',
+    title: 'Belgium Waffles',
+    category: 'Waffles',
+    items: [
+      { name: 'Dark Delight Waffle', price: 89, customizable: true },
+      { name: 'Chocolate Waffle', price: 89, customizable: true },
+      { name: 'Milk Mist Waffle', price: 99, customizable: true },
+      { name: 'Triple Chocolate Waffle', price: 99, customizable: true },
+      { name: 'Oreo Waffle', price: 99, customizable: true },
+      { name: 'KitKat Waffle', price: 111, customizable: true },
+      { name: 'Dry Fruits Waffle', price: 123, customizable: true },
+    ],
   },
   {
-    name: 'Beverage menu coming soon',
-    category: 'Beverages',
-    description: 'Add verified beverage options and details here.',
-    image: '/menu-dessert.png',
-    imageAlt: 'Chocolate dessert photograph used as a temporary menu visual',
-    label: 'Placeholder',
+    title: 'Snacks',
+    category: 'Snacks',
+    items: [
+      { name: 'Peri Peri Fries', price: 99 },
+      { name: 'Salted Fries', price: 89 },
+      {
+        name: 'Veg Loaded Bowl',
+        price: 199,
+        description: 'Loaded with French fries and a mix of potato shots, veg nuggets, veg fingers, and more.',
+      },
+    ],
+  },
+  {
+    title: 'Belgium Waffle Cakes',
+    category: 'Desserts',
+    items: [
+      { name: 'Chocolate Waffle Cake', price: 299, customizable: true },
+      { name: 'White Waffle Cake', price: 299, customizable: true },
+      { name: 'Double Waffle Cake', price: 349, customizable: true },
+      { name: 'Trio Waffle Cake', price: 349, customizable: true },
+      { name: 'Classic Oreo Waffle Cake', price: 369, customizable: true },
+      { name: 'KitKat Waffle Cake', price: 379, customizable: true },
+      { name: 'Royal Bliss Dry Fruits Waffle Cake', price: 399, customizable: true },
+    ],
+  },
+  {
+    title: 'Ice Creams',
+    category: 'Desserts',
+    items: [
+      { name: 'Vanilla Ice Cream', price: 89 },
+      { name: 'Strawberry Ice Cream', price: 89 },
+      { name: 'Chocolate Ice Cream', price: 99 },
+      { name: 'Butterscotch Ice Cream', price: 99 },
+    ],
+  },
+  {
+    title: 'Brownies',
+    category: 'Desserts',
+    items: [
+      { name: 'Triple Brownie', price: 99, customizable: true },
+      { name: 'Double Brownie', price: 99, customizable: true },
+      { name: 'White Choco Brownie', price: 99, customizable: true },
+      { name: 'Milk Choco Brownie', price: 89, customizable: true },
+      { name: 'Dark Choco Brownie', price: 89, customizable: true },
+    ],
+  },
+  {
+    title: 'Bowl Cakes',
+    category: 'Desserts',
+    items: [
+      { name: 'Dark Delight Bowl Cake', price: 89, customizable: true },
+      { name: 'Chocolate Bowl Cake', price: 99, customizable: true },
+      { name: 'Milk Mist Bowl Cake', price: 99, customizable: true },
+      { name: 'Triple Bowl Cake', price: 99, customizable: true },
+      { name: 'Oreo Bowl Cake', price: 99, customizable: true },
+      { name: 'KitKat Bowl Cake', price: 111, customizable: true },
+      { name: 'Dry Fruits Bowl Cake', price: 111, customizable: true },
+    ],
+  },
+  {
+    title: 'Hampers',
+    category: 'Hampers',
+    items: [
+      {
+        name: 'Dry Fruits Brownie Hamper',
+        price: 119,
+        customizable: true,
+        description: 'Rich, fudgy brownies loaded with the delightful crunch of dry fruits.',
+      },
+    ],
   },
 ]

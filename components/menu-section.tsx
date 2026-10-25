@@ -1,25 +1,23 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
-import { ArrowUpRight } from 'lucide-react'
-import { menuCategories, menuItems, type MenuCategory } from '@/lib/business-data'
+import { menuCategories, menuGroups, type MenuCategory } from '@/lib/business-data'
 
 export function MenuSection() {
   const [activeCategory, setActiveCategory] = useState<MenuCategory>('All')
-  const visibleItems = activeCategory === 'All'
-    ? menuItems
-    : menuItems.filter((item) => item.category === activeCategory)
+  const visibleGroups = activeCategory === 'All'
+    ? menuGroups
+    : menuGroups.filter((group) => group.category === activeCategory)
 
   return (
     <section className="menu-section section-pad" id="menu">
       <div className="page-shell">
         <div className="section-heading menu-heading">
           <div>
-            <p className="eyebrow">A little something sweet</p>
-            <h2>Made for your <em>happy place.</em></h2>
+            <p className="eyebrow">Made fresh for your cravings</p>
+            <h2>Find your <em>favourite.</em></h2>
           </div>
-          <p className="section-intro">Explore a few menu placeholders while we prepare the verified Charlie&apos;s Waffles menu.</p>
+          <p className="section-intro">From Belgian waffles to brownies and ice cream, there&apos;s a sweet moment for everyone.</p>
         </div>
         <div className="menu-toolbar">
           <div className="category-list" aria-label="Filter menu by category" role="group">
@@ -35,28 +33,33 @@ export function MenuSection() {
               </button>
             ))}
           </div>
-          <span className="menu-note">Sample menu · prices not yet provided</span>
+          <span className="menu-note">Menu &amp; prices as provided</span>
         </div>
-        <div className="menu-grid" aria-live="polite">
-          {visibleItems.map((item, index) => (
-            <article className="menu-card" key={item.name} style={{ animationDelay: `${index * 70}ms` }}>
-              <div className="menu-image-wrap">
-                <Image src={item.image} alt={item.imageAlt} fill sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 25vw" className="menu-image" />
-                <span className="sample-label">{item.label}</span>
+        <div className="menu-groups" aria-live="polite">
+          {visibleGroups.map((group) => (
+            <section className="menu-group" key={group.title} aria-label={group.title}>
+              <div className="menu-group-heading">
+                <h3>{group.title}</h3>
+                <span>{group.items.length} {group.items.length === 1 ? 'item' : 'items'}</span>
               </div>
-              <div className="menu-card-content">
-                <div className="menu-card-topline">
-                  <span className="menu-category-label">{item.category}</span>
-                  <span className="menu-price">Price to be confirmed</span>
-                </div>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
-                <span className="menu-card-link">Owner-editable sample <ArrowUpRight size={14} aria-hidden="true" /></span>
-              </div>
-            </article>
+              <ul className="menu-item-list">
+                {group.items.map((item) => (
+                  <li className="menu-item" key={item.name}>
+                    <div className="menu-item-main">
+                      <div className="menu-item-heading">
+                        <h4>{item.name}</h4>
+                        <span className="menu-item-price">₹{item.price}</span>
+                      </div>
+                      {item.description && <p className="menu-item-description">{item.description}</p>}
+                      {item.customizable && <span className="customizable-label">Customizable</span>}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
           ))}
         </div>
-        <p className="menu-disclaimer">Menu images and names shown are illustrative samples, not confirmed offerings. Please contact the shop for current items and prices.</p>
+        <p className="menu-disclaimer">The Dry Fruits Brownie Hamper is listed once under Hampers. Please contact the shop to confirm current availability and customization options.</p>
       </div>
     </section>
   )

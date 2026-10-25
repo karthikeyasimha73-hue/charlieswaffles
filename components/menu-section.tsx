@@ -50,7 +50,7 @@ export function MenuSection() {
                         <h4>{item.name}</h4>
                         <span className="menu-item-price">₹{item.price}</span>
                       </div>
-                      {item.description && <p className="menu-item-description">{item.description}</p>}
+                      <p className="menu-item-description">{item.description}</p>
                       {item.customizable && <span className="customizable-label">Customizable</span>}
                     </div>
                   </li>
